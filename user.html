@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="user">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+    <style>
+            table, th, td {
+                margin: 50px;
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 15px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+    
+        <div ng-controller="userCtrl">
+               
+                <table border="1">
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Salary</th>
+                        <th>Company</th>
+                        <th>Remove</th>
+                    </tr>
+                    <tr ng-repeat="user in users"> 
+                        <td>{{user.name}}</td>
+                        <td>{{user.age}}</td>
+                        <td>{{user.salary}}</td>
+                        <td>{{user.company}}</td>
+                        <td ng-click="removeUser(user)"><b>X</b></td>
+                    </tr>
+                </table>
+        
+       
+
+        
+                <form  ng-submit="addUsers()">
+                    <input type="text" ng-model="newName" placeholder="name"/> <br>
+                    <input type="text" ng-model="newAge" placeholder="age"/> <br>
+                    <input type="text" ng-model="newSalary" placeholder="salary"/> <br>
+                    <input type="text" ng-model="newCompany" placeholder="company"/> <br>
+        
+                    <input type="submit" value="submit"/>
+                    
+                </form>
+
+        </div>
+        <!-- <input type="text" name=fname placeholder="enter user name">
+        <input type="email" name=email placeholder="enter email">
+    
+        <input type="button" value="submit"> -->
+        
+    <script src="angular.min.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="user.js"></script>
+</body>
+</html>
+
